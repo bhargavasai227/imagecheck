@@ -10,7 +10,7 @@ app.get("/",function(req,res){
 res.sendFile(__dirname+"/index.html")
 });
 
-app.listen(3000);
+app.listen(process.env.PORT);
 
 
 const uri = "mongodb+srv://bhargav:bhargav%40227@cluster0.r0cqany.mongodb.net/numbers";
