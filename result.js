@@ -25,7 +25,7 @@ const rollscema = new mongoose.Schema({
 const rollNumber=mongoose.model("rollNumber",rollscema);
 
 // inseting to db
-app.post("/",function(req,res){
+app.post("",function(req,res){
 var rNo =req.body.input;
 console.log(rNo);
 const roll = new rollNumber({
