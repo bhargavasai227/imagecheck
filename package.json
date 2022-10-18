@@ -1,0 +1,30 @@
+{
+  "name": "image",
+  "version": "1.0.0",
+  "main": "result.js",
+  "engines": {
+    "node": "16.17.1"
+  },
+  "scripts": {
+    "start": "node result.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bhargavasai227/imagecheck.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bhargavasai227/imagecheck/issues"
+  },
+
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "express": "^4.18.2",
+    "mongoose": "^6.6.5",
+    "querystring": "^0.2.1"
+  },
+  "devDependencies": {},
+  "description": ""
+
+}
