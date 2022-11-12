@@ -32,5 +32,6 @@ const roll = new rollNumber({
   number:rNo
   });
   roll.save()
+  mongoose.connection.close()
 
 });
