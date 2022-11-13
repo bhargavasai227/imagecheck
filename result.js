@@ -27,11 +27,10 @@ const rollNumber=mongoose.model("rollNumber",rollscema);
 // inseting to db
 app.post("/",function(req,res){
 var rNo =req.body.input;
-console.log(rNo);
 const roll = new rollNumber({
   number:rNo
   });
-  roll.save()
-  mongoose.connection.close()
+  roll.save();
+  res.redirect("/");
 
 });
