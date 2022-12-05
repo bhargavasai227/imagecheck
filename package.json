@@ -4,7 +4,7 @@
   "description": "",
   "main": "result.js",
   "scripts": {
-    "test": "node result.js"
+    "start": "node result.js"
   },
   "repository": {
     "type": "git",
