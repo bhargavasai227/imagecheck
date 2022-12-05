@@ -16,9 +16,7 @@ app.get("/search",(req,res)=>{
 res.sendFile(__dirname+"/public/search.html")
 });
 
-app.listen(3000||process.env.PORT,()=>{
-  console.log("server started");
-});
+app.listen(process.env.PORT);
 
 const uri = "mongodb+srv://bhargav:bhargav%40227@cluster0.r0cqany.mongodb.net/numbers";
 mongoose.connect(uri, { useNewUrlParser: true });
@@ -34,7 +32,6 @@ const rollNumber=mongoose.model("rollNumber",rollscema);
 // inseting to db and redirecting to picture
 app.post("/",function(req,res){
 var rNo =req.body.input;
-console.log(rNo);
 const roll = new rollNumber({
   number:rNo
   });
@@ -46,7 +43,6 @@ const roll = new rollNumber({
 //search query
 app.post("/search",(req,res)=>{
   var item=req.body.input1;
-  console.log(item);
   rollNumber.findOne({number:item},function(err,data){
     if(err){
       console.log(err);
@@ -54,15 +50,10 @@ app.post("/search",(req,res)=>{
     }
     else{
       if(data==null){
-        
-      console.log("not found");
-      // res.write("not found in data base");
       res.sendFile(__dirname+"/public/failure.html")
-        
-         
+    
       }
      else{
-       console.log("found");
       //  res.write("found in database");
        res.sendFile(__dirname+"/public/success.html")
       
