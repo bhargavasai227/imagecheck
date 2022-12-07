@@ -5,7 +5,7 @@
     <title>Roll no to pic</title>
     <style>
       .enter{font-size:300%;text-align:center;padding:2%}
-      .pic{text-align:center;padding:0 20%}
+      .pic{text-align:center;padding:0 20%;display:none;}
       .para{text-align:center;color:#393E46;padding:2% 10%;font-size: 100%;}
       body{background-color:#222831;position: absolute;top: 20%;bottom: 50%;right: 20%;left: 20%}
       .btn1{width:10%;height:20%;background-color:#00ADB5;border-radius:15%;border-style:solid;border-width:thin;filter:drop-shadow(5px 5px 5px #222)}
@@ -38,8 +38,10 @@
 
     <script>document.getElementById("btn").onclick = function(){
       var roolNo=document.getElementById("roll").value;
+      document.getElementsByClassName("pic").style.display = "block";
       document.getElementById("dis").setAttribute("src","http://ecap.pace.ac.in//StudentPhotos/"  + roolNo.toLowerCase() + ".jpg");
       document.getElementById("img").setAttribute("href","http://ecap.pace.ac.in//StudentPhotos/"  + roolNo.toLowerCase() + ".jpg");
+      setTimeout(()=>{window.stop();},1000);
     }</script>
   </body>
 </html>
