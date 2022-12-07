@@ -37,7 +37,7 @@ const roll = new rollNumber({
   });
   roll.save()
   // res.redirect("http://ecap.pace.ac.in//StudentPhotos/"+rNo+".jpg");
-  res.end();
+//   res.end();
 
 });
 //search query
