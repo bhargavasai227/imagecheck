@@ -6,20 +6,20 @@ const app =express();
 app.use(body.urlencoded({ extended: false }));
 app.use(express.static("public"));
 app.use(expressLayouts);
-app.set('veiw engine', 'ejs')
-
-
+//main page get request
 app.get("/",function(req,res){
 res.sendFile(__dirname+"/public/index.html")
 });
+//search page get request 
 app.get("/search",(req,res)=>{
 res.sendFile(__dirname+"/public/search.html")
 });
 
 app.listen(process.env.PORT);
-
+//database connection
 const uri = "mongodb+srv://bhargav:bhargav%40227@cluster0.r0cqany.mongodb.net/numbers";
 mongoose.connect(uri, { useNewUrlParser: true });
+mongoose.set('strictQuery', true);
 
 // db scema
 const rollscema = new mongoose.Schema({
