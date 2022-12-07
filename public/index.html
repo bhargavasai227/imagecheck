@@ -38,10 +38,14 @@
 
     <script>document.getElementById("btn").onclick = function(){
       var roolNo=document.getElementById("roll").value;
-      document.getElementsByClassName("pic").style.display = "block";
       document.getElementById("dis").setAttribute("src","http://ecap.pace.ac.in//StudentPhotos/"  + roolNo.toLowerCase() + ".jpg");
       document.getElementById("img").setAttribute("href","http://ecap.pace.ac.in//StudentPhotos/"  + roolNo.toLowerCase() + ".jpg");
+      document.getElementsByClassName("pic")[0].style.display = "block";
+      stop();
+    }
+    Function stop(){
       setTimeout(()=>{window.stop();},1000);
-    }</script>
+    }
+    </script>
   </body>
 </html>
