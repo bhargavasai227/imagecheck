@@ -45,8 +45,7 @@ app.post("/search",(req,res)=>{
   var item=req.body.input1;
   rollNumber.findOne({number:item},function(err,data){
     if(err){
-      console.log(err);
-      
+     console.log(3);
     }
     else{
       if(data==null){
