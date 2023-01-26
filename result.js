@@ -1,11 +1,13 @@
 const express = require("express");
 const body = require("body-parser");
 const mongoose = require("mongoose");
-const expressLayouts = require('express-ejs-layouts');
 const app =express();
+
 app.use(body.urlencoded({ extended: false }));
 app.use(express.static("public"));
-app.use(expressLayouts);
+app.use(function (req, res, next) {
+  res.set('Cache-control', 'public, max-age=300')
+});
 //main page get request
 app.get("/",function(req,res){
 res.sendFile(__dirname+"/public/index.html")
