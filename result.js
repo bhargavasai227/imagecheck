@@ -5,9 +5,28 @@ const app =express();
 
 app.use(body.urlencoded({ extended: false }));
 app.use(express.static("public"));
-app.use(function (req, res, next) {
-  res.set('Cache-control', 'public, max-age=300')
-});
+//cache trails
+let setCache = function (req, res, next) {
+  // here you can define period in second, this one is 5 minutes
+  const period = 60 * 5 
+
+  // you only want to cache for GET requests
+  if (req.method == 'GET') {
+    res.set('Cache-control', `public, max-age=${period}`)
+  } else {
+    // for the other requests set strict no caching parameters
+    res.set('Cache-control', `no-store`)
+  }
+
+  // remember to call next() to pass on the request
+  next()
+}
+
+// now call the new middleware function in your app
+
+app.use(setCache)
+//chache teail ends
+
 //main page get request
 app.get("/",function(req,res){
 res.sendFile(__dirname+"/public/index.html")
