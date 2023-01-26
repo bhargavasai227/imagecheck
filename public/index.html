@@ -1,6 +1,5 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
+<!--1️⃣ code CSS below -->
+<html lang="en" dir="ltr"><head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <title>Roll no to pic</title>
@@ -8,25 +7,56 @@
       .enter{font-size:300%;text-align:center;padding:2%}
       .pic{text-align:center;padding:0 20%;display:none;}
       .para{text-align:center;color:#393E46;padding:2% 10%;font-size: 100%;}
+       @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Koulen&family=Lato&family=Nunito&family=Playfair+Display:ital@1&family=Prata&family=Raleway:ital,wght@1,100&family=Roboto&family=Roboto+Condensed&family=Teko&display=swap');
+
+.btn1{
+
+font-family: Roboto, sans-serif;
+font-weight: 0;
+font-size: 14px;
+color: #fff;
+background-color: #F0A500;
+padding: 10px 30px;
+border: 2px solid #FEB139;
+box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+border-radius: 50px;
+transition : 500ms;
+transform: translateY(0);
+align-items: center;
+cursor: pointer;
+}
+
+.btn1:hover{
+
+transition : 500ms;
+padding: 10px 50px;
+transform : translateY(-0px);
+background-color: #fff;
+color: #0066cc;
+border: solid 2px #0066cc;
+}
+
       body{background-color:#222831;position: absolute;top: 20%;bottom: 50%;right: 20%;left: 20%}
-      .btn1{width:20%;height:20%;background-color:#00ADB5;border-radius:15%;border-style:solid;border-width:thin;filter:drop-shadow(5px 5px 5px #222)}
-      #roll{width:75px;height:25%}#dis{border-radius:15%;filter:drop-shadow(5px 5px 5px #222)}
+      .btn{width:20%;height:20%;background-color:#00ADB5;border-radius:15%;border-style:solid;border-width:thin;filter:drop-shadow(5px 5px 5px #222)}
+      #roll{width:85px;height:25px}#dis{border-radius:15%;filter:drop-shadow(5px 5px 5px #222)}
       iframe{margin:auto;display:block}
     </style>
-    <link rel="icon" type="image/x-icon" href="favicon (1).ico"/>
+    <link rel="icon" type="image/x-icon" href="favicon (1).ico">
   </head>
   <body style="top: 
   2px;">
     <div><center>
-      <p class="para"style="color:white;">Check if your number is in our database.</p>
-      <a href="/search" ><button class="btn1">check</button></a>
+      <p class="para" style="color:white;">Check if your number is in our database.</p>
+      <a href="/search"><button class="btn1">check</button></a>
     </center>
     </div>
     <div class="enter">
       <form action="/" method="post">
      <hi style="color:white; font-size:70%;">Enter your roll number</hi><br>
       <input type="text" id="roll" placeholder="19kq1a05***" name="input"><br>
-      <input type="submit" id="btn" class="btn1"value="go">
+      <input type="submit" id="btn" class="btn1" value="go" style="
+    margin-top: 18px;
+">
     </form>
     </div>
     <div class="pic">
@@ -47,5 +77,8 @@
     }
  
     </script>
-  </body>
-</html>
+  
+
+</body></html>
+
+
