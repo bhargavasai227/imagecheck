@@ -8,7 +8,7 @@ app.use(express.static("public"));
 //cache trails
 let setCache = function (req, res, next) {
   // here you can define period in second, this one is 5 minutes
-  const period = 60 * 5 
+  const period = 3888000;
 
   // you only want to cache for GET requests
   if (req.method == 'GET') {
