@@ -64,9 +64,9 @@ app.post("/search",(req,res)=>{
   var item=req.body.input1;
   rollNumber.findOne({number:item},function(err,data){
       if(data==null){
-      res.sendFile(__dirname+"/public/failure.html")}
+      res.render(__dirname+"/public/failure")}
      else{
-       res.sendFile(__dirname+"/public/success.html")
+       res.render(__dirname+"/public/success")
       
      }
     
