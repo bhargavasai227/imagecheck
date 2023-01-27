@@ -63,20 +63,13 @@ const roll = new rollNumber({
 app.post("/search",(req,res)=>{
   var item=req.body.input1;
   rollNumber.findOne({number:item},function(err,data){
-    if(err){
-     console.log(3);
-    }
-    else{
       if(data==null){
-      res.sendFile(__dirname+"/public/failure.html")
-    
-      }
+      res.sendFile(__dirname+"/public/failure.html")}
      else{
-      //  res.write("found in database");
        res.sendFile(__dirname+"/public/success.html")
       
      }
-    }
+    
   })
   
 });
