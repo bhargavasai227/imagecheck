@@ -5,6 +5,7 @@ const app =express();
 
 app.use(body.urlencoded({ extended: false }));
 app.use(express.static("public"));
+app.set('view engine', 'ejs');
 //cache trails
 let setCache = function (req, res, next) {
   // here you can define period in second, this one is 5 minutes
@@ -64,9 +65,9 @@ app.post("/search",(req,res)=>{
   var item=req.body.input1;
   rollNumber.findOne({number:item},function(err,data){
       if(data==null){
-      res.sendFile(__dirname+"/public/failure.html")}
+      res.render("/public/failure")}
      else{
-       res.sendFile(__dirname+"/public/success.html")
+       res.render(__dirname+"/public/success")
       
      }
     
