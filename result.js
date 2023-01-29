@@ -28,14 +28,18 @@ app.use(setCache)
 
 //main page get request
 app.get("/",function(req,res){
-res.sendFile(__dirname+"/public/index.html")
+// res.sendFile(__dirname+"/public/index.html")
+res.render("index");
 });
 //search page get request 
 app.get("/search",(req,res)=>{
-res.sendFile(__dirname+"/public/search.html")
+// res.sendFile(__dirname+"/public/search.html")
+res.render("search");
 });
 
-app.listen(process.env.PORT);
+app.listen(process.env.PORT||3000,()=>{
+  console.log("renning");
+});
 //database connection
 const uri = "mongodb+srv://bhargav:bhargav%40227@cluster0.r0cqany.mongodb.net/numbers";
 mongoose.connect(uri, { useNewUrlParser: true });
@@ -65,9 +69,9 @@ app.post("/search",(req,res)=>{
   var item=req.body.input1;
   rollNumber.findOne({number:item},function(err,data){
       if(data==null){
-      res.render("/public/failure")}
+      res.render("failure")}
      else{
-       res.render(__dirname+"/public/success")
+       res.render("success")
       
      }
     
