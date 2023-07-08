@@ -7,7 +7,7 @@ app.use(body.urlencoded({ extended: false }));
 app.use(express.static("public"));
 app.set('view engine', 'ejs');
 //cache trails
-var html ="<!DOCTYPE html>
+var html ="
 
 <html lang="en" dir="ltr">
 
